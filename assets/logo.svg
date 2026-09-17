@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img" aria-labelledby="title desc">
+  <title id="title">Integral Esthetic by Martha Chacón</title>
+  <desc id="desc">A graceful human figure surrounded by green leaves above the Integral Esthetic name.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="260" cy="105" r="18" stroke="#087f67" stroke-width="8"/>
+    <path d="M178 137c28 23 53 27 82 10 29 17 55 12 83-12" stroke="#087f67" stroke-width="10"/>
+    <path d="M260 126c-4 70-14 134-44 198M260 126c6 77 9 139 8 201M216 324c21-41 34-69 52-112" stroke="#087f67" stroke-width="10"/>
+    <path d="M216 324c20-37 31-70 44-107 6 38 6 73 8 110" stroke="#0a765d" stroke-width="7"/>
+  </g>
+  <g>
+    <ellipse cx="260" cy="46" rx="13" ry="30" fill="#6fae45"/>
+    <ellipse cx="215" cy="58" rx="13" ry="29" fill="#9ac653" transform="rotate(-34 215 58)"/>
+    <ellipse cx="305" cy="58" rx="13" ry="29" fill="#77a84a" transform="rotate(34 305 58)"/>
+    <ellipse cx="174" cy="89" rx="13" ry="31" fill="#0b8b70" transform="rotate(-54 174 89)"/>
+    <ellipse cx="346" cy="91" rx="13" ry="31" fill="#6ead53" transform="rotate(54 346 91)"/>
+    <ellipse cx="153" cy="133" rx="13" ry="31" fill="#149b82" transform="rotate(-76 153 133)"/>
+    <ellipse cx="367" cy="134" rx="13" ry="31" fill="#85bd4d" transform="rotate(76 367 134)"/>
+    <ellipse cx="161" cy="180" rx="13" ry="31" fill="#0e9476" transform="rotate(-104 161 180)"/>
+    <ellipse cx="360" cy="181" rx="13" ry="31" fill="#73b050" transform="rotate(104 360 181)"/>
+    <ellipse cx="196" cy="211" rx="12" ry="28" fill="#15977a" transform="rotate(-126 196 211)"/>
+    <ellipse cx="325" cy="211" rx="12" ry="28" fill="#80b858" transform="rotate(126 325 211)"/>
+  </g>
+  <text x="260" y="398" text-anchor="middle" fill="#159f9a" font-family="Arial, Helvetica, sans-serif" font-size="49" font-weight="600" letter-spacing="12">INTEGRAL</text>
+  <text x="260" y="455" text-anchor="middle" fill="#159f9a" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700" letter-spacing="2">ESTHETIC</text>
+  <text x="260" y="488" text-anchor="middle" fill="#86aa4f" font-family="Georgia, serif" font-size="23" font-style="italic">by Martha Chacón</text>
+</svg>
