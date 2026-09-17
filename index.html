@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#087f7b">
+  <meta name="description" content="Tablet-first digital client care prototype for Integral Esthetic by Martha Chacón.">
+  <title>Integral Esthetic — Client Care Demo</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-bar">Interactive demo · Sample data only</div>
+  <main class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-go="welcome" aria-label="Go to welcome">
+        <img src="assets/logo.svg" alt="Integral Esthetic by Martha Chacón">
+      </button>
+      <div class="top-actions">
+        <div class="language" role="group" aria-label="Language">
+          <button class="lang active" data-lang="en">EN</button>
+          <button class="lang" data-lang="es">ES</button>
+        </div>
+        <button class="staff-switch" data-go="profile">✦ <span data-i18n="marthaView">Martha view</span></button>
+      </div>
+    </header>
+
+    <section class="screen active welcome-screen" id="welcome" aria-labelledby="welcome-title">
+      <div class="brand-stage" aria-hidden="true">
+        <span class="leaf leaf-one"></span>
+        <span class="leaf leaf-two"></span>
+        <span class="leaf leaf-three"></span>
+        <img src="assets/logo.svg" alt="">
+      </div>
+      <div class="welcome-copy">
+        <p class="eyebrow" data-i18n="checkin">Welcome to your check-in</p>
+        <h1 id="welcome-title" data-i18n="welcomeTitle">It’s lovely to see you.</h1>
+        <p class="lead" data-i18n="welcomeLead">Choose an option below. Martha is nearby if you need any help.</p>
+        <div class="welcome-actions">
+          <button class="choice-card primary-choice" data-go="intake">
+            <span class="choice-icon">＋</span>
+            <span><strong data-i18n="newClient">I’m a new client</strong><small data-i18n="newHelp">Complete your information and consent</small></span>
+            <span class="arrow">→</span>
+          </button>
+          <button class="choice-card" data-go="profile">
+            <span class="choice-icon">♡</span>
+            <span><strong data-i18n="returning">I’m a returning client</strong><small data-i18n="returningHelp">Check in with your mobile number</small></span>
+            <span class="arrow">→</span>
+          </button>
+        </div>
+        <p class="privacy">⌁ <span data-i18n="privacy">Your information stays private and secure.</span></p>
+      </div>
+    </section>
+
+    <section class="screen workflow-screen" id="intake" aria-labelledby="intake-title">
+      <aside class="flow-sidebar">
+        <button class="back-link" data-go="welcome">← <span data-i18n="back">Back</span></button>
+        <div class="steps">
+          <div class="step active"><span>1</span><div><strong data-i18n="about">About you</strong><small>Basic details</small></div></div>
+          <div class="step"><span>2</span><div><strong data-i18n="wellness">Wellness</strong><small>Health history</small></div></div>
+          <div class="step"><span>3</span><div><strong data-i18n="consent">Consent</strong><small>Review & sign</small></div></div>
+        </div>
+        <div class="help-card">♡<p data-i18n="help">Have a question? Just ask Martha — she’s happy to help.</p></div>
+      </aside>
+      <div class="form-content">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="newIntake">New client intake</p>
+          <h2 id="intake-title" data-i18n="tellUs">Tell us a little about you</h2>
+          <p data-i18n="threeMinutes">This usually takes about 3 minutes.</p>
+        </div>
+        <form id="intake-form">
+          <fieldset>
+            <legend data-i18n="contact">Contact details</legend>
+            <div class="field-grid">
+              <label class="span-2"><span data-i18n="fullName">Full name</span><input autocomplete="name" value="Sofia Ramirez"></label>
+              <label><span data-i18n="mobile">Mobile phone</span><input inputmode="tel" value="(407) 555-0186"></label>
+              <label><span data-i18n="dob">Date of birth</span><input type="date" value="1988-04-16"></label>
+              <label class="span-2"><span data-i18n="address">Address</span><input value="124 Garden Way"></label>
+              <label><span data-i18n="city">City</span><input value="Winter Garden"></label>
+              <label><span data-i18n="state">State</span><input value="FL"></label>
+              <label><span data-i18n="zip">ZIP code</span><input value="34787"></label>
+              <label><span data-i18n="referred">Referred by</span><input value="Instagram"></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend data-i18n="healthTitle">Wellness & health history</legend>
+            <p class="fieldset-note" data-i18n="healthNote">Select an answer for each item.</p>
+            <div class="question-grid" id="question-grid"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend data-i18n="goals">Your goals</legend>
+            <div class="goal-grid">
+              <div>
+                <label><span data-i18n="desired">Desired weight (optional)</span><div class="input-suffix"><input inputmode="decimal" placeholder="—"><span>lb</span></div></label>
+                <label><span data-i18n="comments">Anything else you’d like Martha to know?</span><textarea rows="4" placeholder="Share goals, sensitivities, or questions..."></textarea></label>
+              </div>
+              <div>
+                <span class="field-label" data-i18n="areas">Areas you’re interested in</span>
+                <div class="chips" data-area-group="intake"></div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="sticky-actions">
+            <button type="button" class="secondary" data-go="welcome" data-i18n="save">Save for later</button>
+            <button type="button" class="primary" data-go="consent"><span data-i18n="review">Review consent</span> →</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="screen workflow-screen" id="consent" aria-labelledby="consent-title">
+      <aside class="flow-sidebar">
+        <button class="back-link" data-go="intake">← <span data-i18n="back">Back</span></button>
+        <div class="steps">
+          <div class="step complete"><span>✓</span><div><strong data-i18n="about">About you</strong><small>Complete</small></div></div>
+          <div class="step complete"><span>✓</span><div><strong data-i18n="wellness">Wellness</strong><small>Complete</small></div></div>
+          <div class="step active"><span>3</span><div><strong data-i18n="consent">Consent</strong><small>Review & sign</small></div></div>
+        </div>
+        <div class="help-card">♡<p data-i18n="askBefore">Please ask Martha any questions before signing.</p></div>
+      </aside>
+      <div class="form-content">
+        <div class="section-heading"><p class="eyebrow" data-i18n="finalStep">Final step</p><h2 id="consent-title" data-i18n="consentSignature">Consent & signature</h2><p data-i18n="reviewCarefully">Please review the information below carefully.</p></div>
+        <div class="consent-layout">
+          <article class="consent-card">
+            <div class="consent-tabs" role="tablist">
+              <button class="consent-tab active" data-consent="general" data-i18n="general">General consent</button>
+              <button class="consent-tab" data-consent="cellulite" data-i18n="cellulite">Cellulite treatment</button>
+            </div>
+            <div class="consent-copy active" data-panel="general">
+              <h3>General treatment acknowledgment</h3>
+              <p>I confirm that the information I provided is complete and accurate. I understand that wellness and esthetic services are not a substitute for medical care.</p>
+              <p>I have shared relevant health conditions, recent procedures, pregnancy status, medications, sensitivities, and allergies. Results vary. Treatment packages are non-refundable and non-transferable.</p>
+              <p>I have had the opportunity to ask questions and voluntarily consent to the selected services.</p>
+            </div>
+            <div class="consent-copy" data-panel="cellulite">
+              <h3>Cellulite treatment informed consent</h3>
+              <p>I understand that cellulite treatments may require multiple sessions and that outcomes cannot be guaranteed. Temporary redness, warmth, mild discomfort, bruising, or sensitivity may occur.</p>
+              <p>Less common risks may include blistering, pigment changes, infection, bleeding, or scarring. I agree to follow aftercare guidance and report unexpected reactions.</p>
+            </div>
+          </article>
+          <aside class="signature-card">
+            <label class="check-row"><input type="checkbox" id="ack"><span data-i18n="acknowledge">I have read and understand the consent above.</span></label>
+            <div>
+              <span class="field-label" data-i18n="signature">Client signature</span>
+              <canvas id="signature-pad" width="600" height="220" aria-label="Signature area"></canvas>
+              <div class="signature-foot"><span data-i18n="signHelp">Sign with your finger or stylus</span><button type="button" id="clear-signature" data-i18n="clear">Clear</button></div>
+            </div>
+            <label><span data-i18n="date">Date</span><input type="date" id="consent-date"></label>
+            <button class="primary full" type="button" id="submit-intake"><span data-i18n="submit">Submit & return tablet to Martha</span> ✓</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen success-screen" id="submitted">
+      <div class="success-mark">✓</div>
+      <p class="eyebrow" data-i18n="allSet">You’re all set</p>
+      <h2 data-i18n="thanks">Thank you, Sofia.</h2>
+      <p data-i18n="handBack">Please hand the tablet back to Martha. She’ll take care of everything from here.</p>
+      <button class="primary" data-go="profile"><span data-i18n="continue">Continue to Martha’s view</span> →</button>
+    </section>
+
+    <section class="screen staff-screen" id="profile" aria-labelledby="profile-title">
+      <aside class="staff-nav">
+        <div class="staff-brand"><img src="assets/logo.svg" alt="Integral Esthetic"><span>Martha’s workspace</span></div>
+        <nav><button>⌂ <span>Today</span></button><button class="active">♙ <span>Clients</span></button><button>▣ <span>Packages</span></button><button>◷ <span>History</span></button></nav>
+        <button class="client-mode" data-go="welcome">↗ <span>Client check-in</span></button>
+      </aside>
+      <div class="staff-content">
+        <header class="staff-toolbar"><div><p class="eyebrow">Client profile</p><h2 id="profile-title">Sofia Ramirez</h2></div><button class="primary" data-go="treatment">＋ Start treatment</button></header>
+        <div class="profile-grid">
+          <article class="card identity">
+            <div class="avatar">SR</div><div><h3>Sofia Ramirez</h3><p>(407) 555-0186</p><p>sofia.r@example.com</p></div><span class="status">Active</span>
+            <dl><div><dt>Last visit</dt><dd>Sep 8, 2026</dd></div><div><dt>Client since</dt><dd>Jul 2026</dd></div><div><dt>Language</dt><dd>English</dd></div></dl>
+          </article>
+          <article class="card package">
+            <div class="card-head"><div><p class="eyebrow">Active package</p><h3>Body Sculpting</h3></div><button>Packages →</button></div>
+            <div class="progress-label"><span>Session 4 of 8</span><strong>4 remaining</strong></div><div class="progress"><span></span></div>
+            <p class="muted">Abdomen + waist · Expires Dec 20, 2026</p>
+          </article>
+          <article class="card documents">
+            <div class="card-head"><h3>Documents</h3><button>View all →</button></div>
+            <div class="document"><span>✓</span><div><strong>General consent</strong><small>Signed Sep 17, 2026</small></div><em>Signed</em></div>
+            <div class="document"><span>✓</span><div><strong>Cellulite treatment consent</strong><small>Signed Sep 17, 2026</small></div><em>Signed</em></div>
+          </article>
+          <article class="card notes"><div class="card-head"><h3>Notes at a glance</h3><button>Edit</button></div><p>No known allergies. Sensitive lower back. Prefers medium pressure. Working toward improved waist definition before a November event.</p></article>
+          <article class="card history">
+            <div class="card-head"><h3>Recent treatments</h3><button>View history →</button></div>
+            <div class="timeline">
+              <p><time>Sep 8</time><strong>Body Sculpting</strong><small>Abdomen, waist · Session 3 of 8</small></p>
+              <p><time>Aug 30</time><strong>Lymphatic Drainage</strong><small>Abdomen · Aftercare reviewed</small></p>
+              <p><time>Aug 22</time><strong>Body Sculpting</strong><small>Abdomen, waist · Session 2 of 8</small></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen staff-screen" id="treatment" aria-labelledby="treatment-title">
+      <aside class="staff-nav">
+        <div class="staff-brand"><img src="assets/logo.svg" alt="Integral Esthetic"><span>Martha’s workspace</span></div>
+        <nav><button>⌂ <span>Today</span></button><button class="active">♙ <span>Clients</span></button><button>▣ <span>Packages</span></button><button>◷ <span>History</span></button></nav>
+        <button class="client-mode" data-go="welcome">↗ <span>Client check-in</span></button>
+      </aside>
+      <div class="staff-content treatment-content">
+        <header class="staff-toolbar"><div><button class="back-link" data-go="profile">← Sofia’s profile</button><h2 id="treatment-title">Record today’s treatment</h2></div><div class="client-pill"><span>SR</span><div><strong>Sofia Ramirez</strong><small>Body Sculpting · 4 of 8</small></div></div></header>
+        <div class="treatment-grid">
+          <article class="card entry services"><div class="entry-head"><span>1</span><div><h3>What did you do?</h3><p>Select one or more services.</p></div></div><div class="chips" id="service-chips"></div></article>
+          <article class="card entry"><div class="entry-head"><span>2</span><div><h3>Where?</h3><p>Tap all treated areas.</p></div></div><div class="chips" data-area-group="treatment"></div></article>
+          <article class="card entry details">
+            <div class="entry-head"><span>3</span><div><h3>Quick details</h3><p>Only add what changed today.</p></div></div>
+            <div class="session-box"><span>Package session</span><strong>4 of 8</strong><div class="progress"><span></span></div></div>
+            <div class="measurements"><label><span>Waist</span><div class="input-suffix"><input value="31.5"><span>in</span></div></label><label><span>Abdomen</span><div class="input-suffix"><input value="34.0"><span>in</span></div></label><label><span>Weight</span><div class="input-suffix"><input value="148"><span>lb</span></div></label></div>
+            <label><span>Notes</span><textarea rows="3">Tolerated well. Medium intensity.</textarea></label>
+            <div class="quick-notes"><button>No concerns</button><button>Aftercare reviewed</button><button>Photos taken</button></div>
+          </article>
+          <div class="complete-bar"><div><span></span><p><strong>Ready to save</strong><small>Body Sculpting · Abdomen + Waist · Session 4</small></p></div><button class="primary" id="complete-treatment">Complete treatment ✓</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"><span>✓</span><div><strong>Treatment saved</strong><small>Sofia’s history is up to date.</small></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
